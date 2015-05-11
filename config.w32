@@ -1,0 +1,13 @@
+// $Id$
+// vim:ft=javascript
+
+// If your extension references something external, use ARG_WITH
+// ARG_WITH("unserialize2", "for unserialize2 support", "no");
+
+// Otherwise, use ARG_ENABLE
+// ARG_ENABLE("unserialize2", "enable unserialize2 support", "no");
+
+if (PHP_UNSERIALIZE2 != "no") {
+	EXTENSION("unserialize2", "unserialize2.c");
+}
+
