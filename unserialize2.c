@@ -71,16 +71,6 @@ zend_module_entry unserialize2_module_entry = {
 ZEND_GET_MODULE(unserialize2)
 #endif
 
-/* {{{ PHP_INI
- */
-/* Remove comments and fill if you need to have entries in php.ini
-PHP_INI_BEGIN()
-    STD_PHP_INI_ENTRY("unserialize2.global_value",      "42", PHP_INI_ALL, OnUpdateLong, global_value, zend_unserialize2_globals, unserialize2_globals)
-    STD_PHP_INI_ENTRY("unserialize2.global_string", "foobar", PHP_INI_ALL, OnUpdateString, global_string, zend_unserialize2_globals, unserialize2_globals)
-PHP_INI_END()
-*/
-/* }}} */
-
 /* {{{ php_unserialize2_init_globals
  */
 
@@ -118,6 +108,7 @@ PHP_MSHUTDOWN_FUNCTION(unserialize2)
  */
 PHP_RINIT_FUNCTION(unserialize2)
 {
+	UNSERIALIZE2_G(serialize_lock) = 0;
 	return SUCCESS;
 }
 /* }}} */
