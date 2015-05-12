@@ -24,7 +24,7 @@
 extern zend_module_entry unserialize2_module_entry;
 #define phpext_unserialize2_ptr &unserialize2_module_entry
 
-#define PHP_UNSERIALIZE2_VERSION "0.1.0" /* Replace with version number for your extension */
+#define PHP_UNSERIALIZE2_VERSION "0.1.0"
 
 #ifdef PHP_WIN32
 #	define PHP_UNSERIALIZE2_API __declspec(dllexport)
@@ -44,7 +44,6 @@ PHP_RINIT_FUNCTION(unserialize2);
 PHP_RSHUTDOWN_FUNCTION(unserialize2);
 PHP_MINFO_FUNCTION(unserialize2);
 
-PHP_FUNCTION(confirm_unserialize2_compiled);	/* For testing, remove later. */
 
 PHP_FUNCTION(unserialize2_decode);
 
